@@ -12,7 +12,7 @@
 
   <!-- Chain the MUXs -->
   <node name="mux_chainer" pkg="topic_tools" type="relay"
-  	args="/vesc/high_level/ackermann_cmd_mux/output /vesc/low_level/ackermann_cmd_mux/input/navigation" />
+  	args="/high_level/ackermann_cmd_mux/output /low_level/ackermann_cmd_mux/input/navigation" />
 
 
   <!-- Define mappings for backwards compatibility -->
