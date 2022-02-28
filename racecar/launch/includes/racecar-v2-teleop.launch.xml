@@ -3,23 +3,16 @@
   <arg name="racecar_version" default="racecar-v2" />
   <arg name="run_camera" default="false"/>
 
-  <group ns="vesc">
     <!-- joystick node -->
-    <include file="$(find racecar)/launch/includes/common/joy_teleop.launch.xml" >
-      <arg name="racecar_version" value="$(arg racecar_version)" />
-    </include>
+  <include file="$(find racecar)/launch/includes/common/joy_teleop.launch.xml" >
+    <arg name="racecar_version" value="$(arg racecar_version)" />
+  </include>
 
-    <!-- Spawn MUXs -->
-    <include file="$(find racecar)/launch/mux.launch" />
+  <!-- Spawn MUXs -->
+  <include file="$(find racecar)/launch/mux.launch" />
 
-    <!-- start electronic speed controller driver -->
-    <include file="$(find racecar)/launch/includes/$(arg racecar_version)/vesc.launch.xml" >
-      <arg name="racecar_version" value="$(arg racecar_version)" />
-    </include>
-  </group>
-
-  <!-- start imu and laser scanner -->
-  <include file="$(find racecar)/launch/includes/common/sensors.launch.xml" >
+  <!-- start electronic speed controller driver -->
+  <include file="$(find racecar)/launch/includes/$(arg racecar_version)/vesc.launch.xml" >
     <arg name="racecar_version" value="$(arg racecar_version)" />
   </include>
 

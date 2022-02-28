@@ -4,4 +4,3 @@ laser_node:
 
 imu_node:
   device: /dev/imu
-  port: /dev/ttyIMU
